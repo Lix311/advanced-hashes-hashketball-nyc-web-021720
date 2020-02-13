@@ -278,7 +278,7 @@ def player_with_longest_name
  
 def long_name_steals_a_ton?
   player_with_long_name = player_with_longest_name()
-   player_stats(player_with_long_name)
+   player_stats = player_stats(player_with_long_name)
    binding.pry 
 end 
 
