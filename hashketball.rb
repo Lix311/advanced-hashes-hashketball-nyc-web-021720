@@ -221,11 +221,11 @@ def most_points_scored
     team.each do |team_info, player_info|
       if team_info == :players 
         player_info.each do |player|
-          current = num_points_scored(player[:player_name])
-          
+          current_most_points = num_points_scored(player[:player_name])
+          current_player = player[:player_name]
           if current > most_scored[:mspoints]
-            most_scored[:msplayer] = player[:player_name]
-            most_scored[:mspoints] = current 
+            most_scored[:msplayer] = current_player
+            most_scored[:mspoints] = current_most_points 
           end 
         end     
       end 
