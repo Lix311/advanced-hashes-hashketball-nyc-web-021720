@@ -258,7 +258,22 @@ def winning_team
 end   
 
 def player_with_longest_name 
-  
+  most_scored = {:msplayer => "", :mspoints => 0}
+  game_hash.each do |place,team|
+    team.each do |team_info, player_info|
+      if team_info == :players 
+        player_info.each do |player|
+          current = num_points_scored(player[:player_name])
+          
+          if current > most_scored[:mspoints]
+            most_scored[:msplayer] = player[:player_name]
+            most_scored[:mspoints] = current 
+          end 
+        end     
+      end 
+    end 
+  end 
+return most_scored[:msplayer]
 end 
  
 
