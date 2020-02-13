@@ -276,6 +276,10 @@ def player_with_longest_name
    return longest_name[:player] 
   end 
  
- 
+def long_name_steals_a_ton?
+  player_with_long_name = player_with_longest_name()
+  binding.pry 
+end 
+
 
 
