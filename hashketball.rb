@@ -297,6 +297,7 @@ def long_name_steals_a_ton?
     end 
   end 
 most_steals[:msplayer] == player_with_long_name
+binding.pry 
 end 
 
 
