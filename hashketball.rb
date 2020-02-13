@@ -288,7 +288,7 @@ def long_name_steals_a_ton?
         player_info.each do |player|
           current_player_steals = player[:steals]
           current_player = player[:player_name]
-          if long_steals > current_player_steals
+          if current_player_steals > long_steals
             most_steals[:msplayer] = current_player
             most_steals[:msteals] = current_player_steals
           end 
