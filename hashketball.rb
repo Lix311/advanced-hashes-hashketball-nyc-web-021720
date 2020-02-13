@@ -280,9 +280,23 @@ def long_name_steals_a_ton?
   player_with_long_name = player_with_longest_name()
    player_stats = player_stats(player_with_long_name)
    steals = player_stats[:steals] 
-   
-   
-   
+   most_steals = {:msplayer => player_with_long_name, :msteals => 0}
+  
+  game_hash.each do |place,team|
+    team.each do |team_info, player_info|
+      if team_info == :players 
+        player_info.each do |player|
+          current_player_points = num_points_scored(player[:player_name])
+          current_player = player[:player_name]
+          if current_player_points > most_scored[:mspoints]
+            most_scored[:msplayer] = current_player
+            most_scored[:mspoints] = current_player_points
+          end 
+        end     
+      end 
+    end 
+  end 
+return most_scored[:msplayer]
    
     
 end 
