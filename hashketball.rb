@@ -268,17 +268,13 @@ def player_with_longest_name
             if current_player_len > longest_name[:namelength]
               longest_name[:player] = current_player
               longest_name[:namelength] = current_player_len
-          
-          if current > most_scored[:mspoints]
-            most_scored[:msplayer] = player[:player_name]
-            most_scored[:mspoints] = current 
-          end 
-        end     
+            end 
+          end     
+        end 
       end 
     end 
+   return longest_name[:player] 
   end 
-return most_scored[:msplayer]
-end 
  
 
 
