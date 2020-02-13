@@ -235,7 +235,22 @@ return most_scored[:msplayer]
 end 
 
 def winning_team 
-    
-end 
+  home_points = 0 
+  away_points = 0 
+  game_hash.each do |place,team|
+    team.each do |team_info,player_info| 
+      if team_info == :players
+        player_info.each do |player|
+          if place == :home
+            home_points += player[:points]
+          else 
+            away_points += player[:points]
+          end 
+        end 
+      end 
+      end 
+  end 
+end   
+ 
 
 
